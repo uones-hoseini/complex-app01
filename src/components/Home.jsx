@@ -1,10 +1,15 @@
 import axios from "axios"
-import React, { useEffect } from "react"
+import React, { useState } from "react"
 
 function Home() {
-  function handleSubmit(e){
-   e.preventDefault()
-   axios.post('http://localhost:8080/register',{username:'ali',password:'1231212312312313212313123', email:'hfsd@asd.asdas'})
+
+  const[username,setUsername]=useState()
+  const[email,setEmail]=useState()
+  const[password,setPassword]=useState()
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    axios.post("http://localhost:8080/register", { username: "ali", password: "1231212312312313212313123", email: "hfsd@asd.asdas" })
   }
   return (
     <>

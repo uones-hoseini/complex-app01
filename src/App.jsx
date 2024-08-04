@@ -9,14 +9,7 @@ import { useEffect } from "react"
 import axios from "axios"
 
 function App() {
-  useEffect(()=>{
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
-    .then((res)=>{
-      console.log(res)
-    })
-    // callback, promise, async/await
-    // async requests
-  },[])
+
   return (
     <BrowserRouter>
       <Header />
