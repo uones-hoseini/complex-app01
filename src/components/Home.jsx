@@ -2,14 +2,15 @@ import axios from "axios"
 import React, { useState } from "react"
 import Container from "./Container"
 
+
 function Home() {
   const [username, setUsername] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
-  function handleSubmit(e) {
+ async function handleSubmit(e) {
     e.preventDefault()
-    axios.post("http://localhost:8080/register", { username, password, email })
+   await axios.post("http://localhost:8080/register", { username, password, email })
   }
   return (
     <Container wide={true}>
