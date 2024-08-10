@@ -9,7 +9,9 @@ function HeaderLoggedOut(props) {
     try {
       const response = await Axios.post("http://localhost:8080/login", { username, password })
       if (response.data) {
-        console.log(response.data)
+        localStorage.setItem("complex-appToken", response.data.token)
+        localStorage.setItem("compelex-appUsername", response.data.username)
+        localStorage.setItem("complex-appAvatar", response.data.avatar)
         props.setLoggedIn(true)
       } else {
         console.log("Incorrect password/username")
