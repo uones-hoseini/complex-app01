@@ -3,8 +3,7 @@ import { Link } from "react-router-dom"
 import HeaderLoggedIn from "./HeaderLoggedIn"
 import { useState } from "react"
 
-function Header() {
-  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complex-appToken")))
+function Header(props) {
   return (
     <>
       <header className="header-bar bg-primary mb-3">
@@ -14,7 +13,7 @@ function Header() {
               ComplexApp
             </Link>
           </h4>
-          {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
+          {props.loggedIn ? <HeaderLoggedIn setLoggedIn={props.setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />}
         </div>
       </header>
     </>
