@@ -1,6 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
-import Container from "./Container"
+import Page from "./Page"
 
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
    await axios.post("http://localhost:8080/register", { username, password, email })
   }
   return (
-    <Container wide={true}>
+    <Page title="Home" wide={true}>
       <div className="row align-items-center">
         <div className="col-lg-7 py-3 py-md-5">
           <h1 className="display-3">Remember Writing?</h1>
@@ -45,7 +45,7 @@ function Home() {
           </form>
         </div>
       </div>
-    </Container>
+    </Page>
   )
 }
 
