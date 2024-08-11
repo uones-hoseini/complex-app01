@@ -8,6 +8,7 @@ import About from "./components/About"
 import Terms from "./components/Terms"
 
 function App() {
+  //!!!
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complex-appToken")))
 
   return (
