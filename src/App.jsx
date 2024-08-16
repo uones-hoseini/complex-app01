@@ -7,9 +7,9 @@ import Header from "./components/Header"
 import About from "./components/About"
 import Terms from "./components/Terms"
 import CreatePost from "./components/CreatePost"
-import ViewSinglePost from './components/ViewSinglePost'
+import ViewSinglePost from "./components/ViewSinglePost"
 import Axios from "axios"
-Axios.defaults.baseURL = 'http://localhost:8080'
+Axios.defaults.baseURL = "http://localhost:8080/"
 
 function App() {
   //!!!
@@ -20,7 +20,7 @@ function App() {
       <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" element={loggedIn ? <Home /> : <HomeGuest />} />
-        <Route path="/post/:id" element={<ViewSinglePost/>}/>
+        <Route path="/post/:id" element={<ViewSinglePost />} />
         <Route path="/create-post" element={<CreatePost />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/terms" element={<Terms />} />
